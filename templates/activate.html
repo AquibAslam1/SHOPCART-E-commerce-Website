@@ -1,0 +1,18 @@
+{% autoescape off %}
+
+Hi {{user.username}}
+Please Click This Link below to verify your account
+
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}
+{% autoescape off %}
+<p>Hi <strong>{{ user.username }}</strong>,</p>
+<p>Please click the link below to activate your account:</p>
+
+<p>
+  <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">
+    Activate My Account
+  </a>
+</p>
+{% endautoescape %}
